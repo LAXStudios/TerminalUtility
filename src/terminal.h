@@ -36,7 +36,7 @@ namespace laxterm {
         write(STDOUT_FILENO, "\x1b[?25h", 6);
     }
 
-    inline void moveTo(int row, int col) {
+    inline void moveTo(const int row, const int col) {
         std::string seq = "\x1b[" + std::to_string(row) + ";" + std::to_string(col) + "H";
         write(STDOUT_FILENO, seq.c_str(), seq.size());
     }
@@ -76,7 +76,7 @@ namespace laxterm {
 
     inline KeyResult readKey() {
         if (const char firstCase = readByte(); firstCase != '\x1b')
-            return {Key::Unknown, firstCase};
+            return {Key::Char, firstCase};
 
         if (const char secondCase = readByte(); secondCase != '[')
             return {Key::Unknown, 0};

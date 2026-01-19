@@ -7,6 +7,7 @@
 
 int main() {
 
+    // Testing Sandbox
     laxterm::RawMode raw_mode;
     laxterm::clearScreen();
     laxterm::hideCursor();
@@ -19,6 +20,7 @@ int main() {
     laxterm::clearScreen();
 
     std::string input = laxterm::getInput();
+    std::string input1 = laxterm::getInput("Hi", "> ");
 
     return 0;
 }
