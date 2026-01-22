@@ -22,5 +22,7 @@ int main() {
     std::string input = laxterm::getInput();
     std::string input1 = laxterm::getInput("Hi", "> ");
 
+    std::string input2 = laxterm::InputField::getInput("Hi from upper class", "> ");
+
     return 0;
 }

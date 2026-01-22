@@ -3,7 +3,7 @@
 //
 
 // The More I know:
-// Terminal entry cord is 1:1
+// Terminal entry cord is 1:1 and not 0:0
 
 #ifndef TERMINALUTILITY_INPUT_H
 #define TERMINALUTILITY_INPUT_H
@@ -32,6 +32,12 @@ inline void renderInput(
 }
 
 namespace laxterm {
+
+    class InputField {
+    public:
+        static std::string getInput(const std::string &prompt, const std::string &inputSymbol = "", const int &currentRow = 1);
+    };
+
     inline std::string getInput(const std::string &prompt = "", const std::string &inputSymbol = "", const int &currentRow = 1) {
         std::string input;
         const int cursorEntryPoint = static_cast<int>(inputSymbol.length() + 1);
