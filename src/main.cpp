@@ -12,7 +12,7 @@ int main() {
     laxterm::clearScreen();
     laxterm::hideCursor();
 
-    std::vector<std::string> mainMenuItems = {"Option 1", "Option 2"};
+    std::vector<std::string> mainMenuItems = { laxterm::setColor("Blue", laxterm::TerminalColor::BLUE), "Option 2"};
 
     laxterm::Menu menu(mainMenuItems);
     std::string menuReturn = menu.MenuRun();
